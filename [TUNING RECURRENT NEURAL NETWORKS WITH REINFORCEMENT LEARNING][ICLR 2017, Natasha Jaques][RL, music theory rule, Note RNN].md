@@ -20,11 +20,11 @@ ICLR 2017
 * Reward RNN은 초기화된 후 고정되며, 이를 이용하여 log p(a|s)를 계산
 
 <p align="center">
-<img src="./figures/RL_Tuner.png", width=400> 
+<img src="./figures/RL_Tuner.png", width=600> 
 </p>
 
 <p align="center">
-<img src="./figures/equation_Tuner.png", width=400> 
+<img src="./figures/equation_Tuner.png", width=800> 
 </p>
 
 ### 1) RELATIONSHIP TO KL CONTROL
@@ -49,21 +49,20 @@ ICLR 2017
 
 ## 3. RESULTS
 
-* 음악 이론 rule 관련 metric, 상단의 반은 0에 가까울수록, 하단의 반은 클수록 좋음
-
 <p align="center">
-<img src="./figures/music_theory.png", width=400> 
+<img src="./figures/music_theory.png", width=600> 
 </p>
 
+* 음악 이론 rule 관련 metric, 상단의 반은 0에 가까울수록, 하단의 반은 클수록 좋음
 * RL의 적용으로 Note RNN의 "bad behavior"이 대부분 고쳐짐
-* metric들의 개선 정도는 해당 behavior에 주어진 reward의 크기에 관련됨  
+* metric들의 개선 정도는 해당 behavior에 주어진 reward의 크기에 관련됨   
+
+<p align="center">
+<img src="./figures/average_reward.png", width=700> 
+</p>
 
 * training data에 대한 정보를 잘 유지했는지 보기 위해 music theory reward만을 사용하여 학습한 RL only 모델과 세 모델을 비교
 * 세 모델이 베이스라인에 비해 높은 log p(a|s) 값을 유지하는 것을 확인, 이는 데이터 분포에 대한 정보를 유지했음을 의미
 * Q와 psi 모델이 가장 듣기 좋은 멜로디를 생성
-
-<p align="center">
-<img src="./figures/average_reward.png", width=400> 
-</p>
 
 ## Note
