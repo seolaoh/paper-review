@@ -3,7 +3,7 @@
 ICLR 2017
 
 [code](https://github.com/natashamjaques/magenta/tree/rl-tuner)  
-[samples](https://drive.google.com/drive/folders/0BycMAUU0mKhwN3BEMENCMXN2cFE)
+[sample melodies](https://drive.google.com/drive/folders/0BycMAUU0mKhwN3BEMENCMXN2cFE)
 
 ## 0. Overview
 
@@ -24,10 +24,11 @@ ICLR 2017
 </p>
 
 <p align="center">
-<img src="./figures/equation_Tuner.png", width=800> 
+<img src="./figures/equation_Tuner.png", width=700> 
 </p>
 
 ### 1) RELATIONSHIP TO KL CONTROL
+<br/>
 
 ### 2) MUSIC-THEORY BASED REWARD
 * 모든 note가 같은 key에 속해야 한다
