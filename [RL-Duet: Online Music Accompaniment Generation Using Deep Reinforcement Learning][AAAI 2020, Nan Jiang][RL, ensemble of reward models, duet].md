@@ -1,7 +1,5 @@
 # [RL-Duet: Online Music Accompaniment Generation Using Deep Reinforcement Learning](https://aaai.org/ojs/index.php/AAAI/article/view/5413/5269)
 
-작성자 : 오설아
-
 AAAI 2020
 
 ## 0. Overview
