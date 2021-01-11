@@ -18,7 +18,7 @@ AAAI 2020
 * 반면 RL을 이용하면 agent는 직접적으로 model prediction을 이용하여 시행착오를 통해 long-term discounted reward를 최대화시키는 방향으로 학습
 
 <p align="center">
-<img src="./figures/MLE_RL.png"> 
+<img src="./figures/MLE_RL.png", width=600> 
 </p>
 
 ### 2) Representation
@@ -32,14 +32,14 @@ AAAI 2020
 * expected long-term discounted reward EπR를 최적화
 
 <p align="center">
-<img src="./figures/equation_pg.png"> 
+<img src="./figures/equation_pg.png", width=400> 
 </p>
 
 * 학습 과정은 2단계를 반복: generation, reward
 * generation 단계가 모두 끝나고 전체 음악이 다 연주되면, reward agent가 각 time-step의 reward를 계산하여 gradient 기반 update
 
 <p align="center">
-<img src="./figures/RL-Duet.png"> 
+<img src="./figures/RL-Duet.png", width=600> 
 </p>
 
 ### 4) Reward Model
@@ -60,18 +60,18 @@ AAAI 2020
 * machine part의 첫 두 마디는 ground-truth 악보로 주어짐
 
 <p align="center">
-<img src="./figures/generation_model.png"> 
+<img src="./figures/generation_model.png", width=400> 
 </p>
 
 ### 2) Objective Evaluation
 * pitch count per bar (PC/bar), average pitch interval (PI), average inter-onset-interval (IOI), pitch class histogram (PCH) and note length histogram (NLH)
 
 <p align="center">
-<img src="./figures/objective_evaluation.png"> 
+<img src="./figures/objective_evaluation.png", width=400> 
 </p>
 
 <p align="center">
-<img src="./figures/graph.png"> 
+<img src="./figures/graph.png", width=800> 
 </p>
 
 ## Note
