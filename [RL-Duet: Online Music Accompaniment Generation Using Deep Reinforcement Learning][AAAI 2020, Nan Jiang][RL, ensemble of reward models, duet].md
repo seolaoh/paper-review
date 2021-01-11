@@ -10,7 +10,7 @@ AAAI 2020
 * RL-Duet은 reward 모델들의 결합을 통한 강화학습 모델
 * human과 machine의 input 사이의 inter-part 및 intra-part 조화를 고려하여 reward model을 학습
 
-## 1. RL-Duet
+## 1. RL-Duet 
 
 ### 1) Motivation for Reinforcement Learning
 * MLE 기반의 예측은 training과 testing 환경이 다르기 때문에 test 시 모델의 생성이 한 번 잘못되면 누적됨
