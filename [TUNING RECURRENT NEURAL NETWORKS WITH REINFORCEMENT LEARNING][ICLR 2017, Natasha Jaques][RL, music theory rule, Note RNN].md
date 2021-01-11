@@ -1,8 +1,9 @@
-# [TUNING RECURRENT NEURAL NETWORKS WITH RE- INFORCEMENT LEARNING](https://openreview.net/pdf?id=Syyv2e-Kx)
+# [TUNING RECURRENT NEURAL NETWORKS WITH REINFORCEMENT LEARNING](https://openreview.net/pdf?id=Syyv2e-Kx)
 
 ICLR 2017
 
-[코드](https://github.com/natashamjaques/magenta/tree/rl-tuner)
+[code](https://github.com/natashamjaques/magenta/tree/rl-tuner)  
+[samples](https://drive.google.com/drive/folders/0BycMAUU0mKhwN3BEMENCMXN2cFE)
 
 ## 0. Overview
 
@@ -43,7 +44,7 @@ ICLR 2017
 
 * Note RNN의 학습을 위해 30,000개의 MIDI song으로부터 monophonic melody 추출
 * 멜로디는 16개의 note로 나뉘어서, 각 time step은 한 마디의 1/16을 나타냄
-* 0 = note off, 1 = no event, 3 옥타브의 note로 인코딩 -> 길이가 38인 one-hot encoding
+* 0 = note off, 1 = no event, 3 옥타브의 notes로 인코딩 -> 길이가 38인 one-hot encoding
 * Note RNN으로 정의된 policy가 cross entropy reward로 사용된 Q-learning과 prior policy로 사용된 generalized psi-learning, G-learning 비교
 
 ## 3. RESULTS
@@ -55,7 +56,7 @@ ICLR 2017
 </p>
 
 * RL의 적용으로 Note RNN의 "bad behavior"이 대부분 고쳐짐
-* metric들의 개선 정도는 해당 behavior에 주어진 reward의 크기에 관련됨
+* metric들의 개선 정도는 해당 behavior에 주어진 reward의 크기에 관련됨  
 
 * training data에 대한 정보를 잘 유지했는지 보기 위해 music theory reward만을 사용하여 학습한 RL only 모델과 세 모델을 비교
 * 세 모델이 베이스라인에 비해 높은 log p(a|s) 값을 유지하는 것을 확인, 이는 데이터 분포에 대한 정보를 유지했음을 의미
@@ -66,4 +67,3 @@ ICLR 2017
 </p>
 
 ## Note
-공개된 code가 없음
