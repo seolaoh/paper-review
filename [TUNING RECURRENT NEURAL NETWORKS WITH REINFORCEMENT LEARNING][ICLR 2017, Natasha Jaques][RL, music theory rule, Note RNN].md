@@ -16,7 +16,7 @@ ICLR 2017
 * pre-train된 Note RNN에 음악 이론에 관한 개념들을 학습시키면서, 동시에 원래 데이터에서 학습한 정보는 유지하는 것이 목표
 * Note RNN으로 학습된 LSTM을 사용하여 Q-network, Target Q-network, Reward RNN 초기화
 * RL 모형화에서 state는 이전 note와 Q-network, Reward RNN의 LSTM cell의 internal state를 포함
-* 음악 이론 기반의 rule 기반의 reward signal rMT(a, s) 정의
+* 음악 이론 기반의 rule을 정의하여 rule에 대한 reward signal rMT(a, s) 정의
 * Reward RNN은 초기화된 후 고정되며, 이를 이용하여 log p(a|s)를 계산
 
 <p align="center">
