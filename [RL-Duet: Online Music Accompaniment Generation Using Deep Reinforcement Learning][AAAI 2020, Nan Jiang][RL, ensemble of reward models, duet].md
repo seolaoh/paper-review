@@ -57,7 +57,6 @@ AAAI 2020
 * 아래 그림은 generation model과 reward model (a)의 구조
 * 학습 과정은 먼저 reward model들이 MLE로 학습되고, 이를 고정시킨 뒤 generation model이 강화학습으로 학습됨
 * pre-train된 reward model (a)는 generation model의 초기값으로 사용됨
-* 학습 과정은 먼저 reward model들이 MLE로 학습되고, 이를 고정시킨 뒤 generation model이 강화학습으로 학습됨
 * machine part의 첫 두 마디는 ground-truth 악보로 주어짐
 
 <p align="center">
@@ -77,3 +76,4 @@ AAAI 2020
 
 ## Note
 공개된 code가 없음
+rule-based reward가 여기서는 한 개인데, 더 추가해보면 어떨지
