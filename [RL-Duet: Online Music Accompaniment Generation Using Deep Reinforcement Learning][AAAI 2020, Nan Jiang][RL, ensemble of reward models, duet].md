@@ -75,5 +75,5 @@ AAAI 2020
 </p>
 
 ## Note
-공개된 code가 없음
+공개된 code가 없음  
 rule-based reward가 여기서는 한 개인데, 더 추가해보면 어떨지
