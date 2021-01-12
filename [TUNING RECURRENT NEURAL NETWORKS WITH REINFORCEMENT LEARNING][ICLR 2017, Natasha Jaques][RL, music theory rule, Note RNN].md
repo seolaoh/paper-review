@@ -2,7 +2,7 @@
 
 ICLR 2017
 
-[code](https://github.com/natashamjaques/magenta/tree/rl-tuner)  
+[code](https://github.com/natashamjaques/magenta/tree/rl-tuner/magenta/models/rl_tuner)  
 [sample melodies](https://drive.google.com/drive/folders/0BycMAUU0mKhwN3BEMENCMXN2cFE)
 
 ## 0. Overview
