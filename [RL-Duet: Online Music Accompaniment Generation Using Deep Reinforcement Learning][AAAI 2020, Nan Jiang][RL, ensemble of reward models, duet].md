@@ -10,7 +10,7 @@ AAAI 2020
 
 ## 1. RL-Duet
 
-### 1) Motivation for Reinforcement Learning
+### 1) Motivation for Reinforcement Learning 
 * MLE 기반의 예측은 training과 testing 환경이 다르기 때문에 test 시 모델의 생성이 한 번 잘못되면 누적됨
 * 또한 training 기준과 생성 목표가 다르기 때문에 생성된 sequence의 미래 token에 대한 long-term effect를 고려하지 못함
 * 반면 RL을 이용하면 agent는 직접적으로 model prediction을 이용하여 시행착오를 통해 long-term discounted reward를 최대화시키는 방향으로 학습
