@@ -1,4 +1,4 @@
-# [Paper] DEEP MUSIC ANALOGY VIA LATENT REPRESENTATION DISENTANGLEMENT
+# DEEP MUSIC ANALOGY VIA LATENT REPRESENTATION DISENTANGLEMENT
 
 [paper](https://archives.ismir.net/ismir2019/paper/000072.pdf)
 
@@ -34,7 +34,9 @@ ISMIR 2019
         - 이는 z가 chord에 관련된 정보는 저장하지 않아도 되게끔 함
         - 대신 chord 진행의 latent 분포는 학습 불가
 
-![%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled.png](%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled.png)
+<p align="center">
+<img src="./figures/EC_0.png", width=800> 
+</p>
 
 - chord는 각 time step에서 input에 concat
 - disentanglement를 위해 z가 각각 128 dimension을 가지도록 Zp와 Zr로 나눠짐
@@ -52,7 +54,9 @@ ISMIR 2019
 
 - rhythm과 chord는 그대로 두고 pitch만 i semitone 변화시켰을 때
 
-![%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled%201.png](%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled%201.png)
+<p align="center">
+<img src="./figures/EC_1.png", width=600> 
+</p>
 
 - Zr의 변화보다 Zp의 변화가 훨씬 큰 모습
 - 인간의 pitch perception을 반영하는 특징
@@ -61,20 +65,24 @@ ISMIR 2019
 
 **1-2) F-score of Augmentation-based Query**
 
-![%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled%202.png](%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled%202.png)
+<p align="center">
+<img src="./figures/EC_2.png", width=500> 
+</p>
 
-### 2**) Examples of Generation via Analogy**
+### **2) Examples of Generation via Analogy**
 
 - source 멜로디에서 Zp만 변경했을 경우, 생성된 멜로디가 source의 rhythm은 유지하면서 pitch feature를 잘 캡쳐
 - Zr만 변경할 경우 완벽하게 새로운 rhythm 패턴을 상속받고 source의 pitch에 기반하여 작지만 새로운 변화를 생성
 - 다른 chord 진행으로 source 멜로디를 생성할 경우, 새 멜로디가 단순히 모든 note를 transpose 하는게 아니라 합리적인 변화를 만들어 냄
 - Zr과 Zp 학습된 latent representation 두 축을 이용한 subspace 상에서의 traversal 도 가능
 
-### 3**) Subjective Evaluation**
+### **3) Subjective Evaluation**
 
 - rhythm factor 변경
 - baseline은 원본보다 더 빠른 rhythm을 갖게끔 단순히 note들을 잘라서 만든 rule-based 방식
 
-![%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled%203.png](%5BPaper%5D%20DEEP%20MUSIC%20ANALOGY%20VIA%20LATENT%20REPRESENTATI%2002c84c7d206443b892a9286f8623c20e/Untitled%203.png)
+<p align="center">
+<img src="./figures/EC_3.png", width=500> 
+</p>
 
 ## **Note**
