@@ -1,6 +1,6 @@
 # Chord Conditioned Melody Generation with Transformer Based Decoders
 
-[CHORD CONDITIONED MELODY GENERATION WITH TRANSFORMER BASED DECODERS.pdf](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/23_CHORD_CONDITIONED_MELODY_GENERATION_WITH_TRANSFORMER_BASED_DECODERS.pdf)
+paper
 
 ## **0. Overview**
 
@@ -42,7 +42,9 @@
 - rhythm vector r은 3 dimension의 one-hot(onset of a note, holding state of an onset note, rest)
 - pitch vector p는 50 dimension의 one-hot(첫 48 dim은 onset of MIDI pitch from 48 (C3) to 95 (B6), 나머지 둘은 holding state와 rest)
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled.png)
+<p align="center">
+<img src="./figures/CMT.png", width=600> 
+</p>
 
 - 최소 단위는 16분음표
 
@@ -66,15 +68,25 @@
 - rhythm encoder 추가 학습하는 대신, RD의 intermediate rhythm representation 재사용
 - 추가적으로 이전 time-step의 pitch token 사용
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%201.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%201.png)
+<p align="center">
+<img src="./figures/CMT_1.png", width=800> 
+</p>
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%202.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%202.png)
+<p align="center">
+<img src="./figures/CMT_2.png", width=150> 
+</p>
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%203.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%203.png)
+<p align="center">
+<img src="./figures/CMT_3.png", width=200> 
+</p>
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%204.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%204.png)
+<p align="center">
+<img src="./figures/CMT_4.png", width=150> 
+</p>
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%205.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%205.png)
+<p align="center">
+<img src="./figures/CMT_5.png", width=300> 
+</p>
 
 ### 3) Two-Phase Training
 
@@ -95,7 +107,7 @@
     - 하나의 데이터에 대해 rhythm은 동일하지만, pitch와 chord가 다른 총 12개의 데이터 생성
     - RD가 chord의 타이밍을 캡쳐하고 pitch class에 robust 할 수 있도록
 
-## 3**. Experiments**
+## **3. Experiments**
 
 ### **1) Data**
 
@@ -107,9 +119,11 @@
 
 - RD는 NLL, PD는 focal loss
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%206.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%206.png)
+<p align="center">
+<img src="./figures/CMT_6.png", width=300> 
+</p>
 
-- PD의 input으로 학습 시에는 ground truth rhythm sequence, 생성 시에는 RD로 생성된 rhythm sequence(그럼 학습 시에는 r 틸다가 아닌 그냥 r이 임베딩되어 들어가나?)
+- PD의 input으로 학습 시에는 ground truth rhythm sequence, 생성 시에는 RD로 생성된 rhythm sequence
 - rhythm token은 확률 분포에서 샘플링
 - pitch token도 top-5에서 샘플링
 - 멜로디 생성을 위해서 주어진 chord sequence에 대해 첫 token은 휴리스틱하게 선택
@@ -127,30 +141,35 @@
         - loss term for RP는 L=Lr+Lp
     - second phase
         - single key data에 대해 100 에폭
-        - 시작할 때 first phase에서 학습된 RD의 parameter 불러와서 시작, CE와 PD는 랜덤하게 초기화(RD의 lr은 10-6으로 고정, 1개 optimizer로 RD와 PD의 lr을 다르게 설정할 수 있는가)
+        - 시작할 때 first phase에서 학습된 RD의 parameter 불러와서 시작, CE와 PD는 랜덤하게 초기화
 - two baseline: vanilla transformer(self-attention block 여러 개로 구성된 CE와 PD), self-attention CE를 biLSTM으로 바꾼 모델
-- PD로 넘어갈 때 hold(rhythm) → hold(pitch)로 강제하는지?
 
-## 4**. Result**
+## **4. Result**
 
 ### **1) Quantitative Evaluation**
 
-- RP는 RD 학습 시 Lr+Lp 쓴다는건데, Lp를 포함시키는게 RD 학습에 더 효과적인 이유?
-
 1-1) Validation Accuracy
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%207.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%207.png)
+<p align="center">
+<img src="./figures/CMT_7.png", width=800> 
+</p>
 
 1-2) Chord Tone Ratio
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%208.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%208.png)
+<p align="center">
+<img src="./figures/CMT_8.png", width=500> 
+</p>
 
 1-3) Rhythm Pattern Analysis
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%209.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%209.png)
+<p align="center">
+<img src="./figures/CMT_9.png", width=500> 
+</p>
 
-### 2**) Human Evaluation**
+### **2) Human Evaluation**
 
-![Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%2010.png](Chord%20Conditioned%20Melody%20Generation%20with%20Transform%205d3531cca8c54176895984576d79b4a5/Untitled%2010.png)
+<p align="center">
+<img src="./figures/CMT_10.png", width=500> 
+</p>
 
 ## **Note**
