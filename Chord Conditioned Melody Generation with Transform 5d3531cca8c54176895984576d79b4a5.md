@@ -73,15 +73,15 @@ paper
 </p>
 
 <p align="center">
-<img src="./figures/CMT_2.png", width=150> 
+<img src="./figures/CMT_2.png", width=180> 
 </p>
 
 <p align="center">
-<img src="./figures/CMT_3.png", width=200> 
+<img src="./figures/CMT_3.png", width=250> 
 </p>
 
 <p align="center">
-<img src="./figures/CMT_4.png", width=150> 
+<img src="./figures/CMT_4.png", width=250> 
 </p>
 
 <p align="center">
@@ -148,19 +148,19 @@ paper
 
 ### **1) Quantitative Evaluation**
 
-1-1) Validation Accuracy
+**1-1) Validation Accuracy**
 
 <p align="center">
 <img src="./figures/CMT_7.png", width=800> 
 </p>
 
-1-2) Chord Tone Ratio
+**1-2) Chord Tone Ratio**
 
 <p align="center">
 <img src="./figures/CMT_8.png", width=500> 
 </p>
 
-1-3) Rhythm Pattern Analysis
+**1-3) Rhythm Pattern Analysis**
 
 <p align="center">
 <img src="./figures/CMT_9.png", width=500> 
